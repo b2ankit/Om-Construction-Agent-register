@@ -1,0 +1,16 @@
+.fluid_set{
+    padding: 0px;
+    position:fixed;
+    z-index: 100;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+    color: white;
+    font-weight: 500;
+    font-size: 17px;
+    
+}
+
+#navbarSupportedContent{
+    padding-left: 35%;
+}

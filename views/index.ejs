@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel='stylesheet' type="text/css" href='/stylesheets/style_table.css'/>
+  <link rel='stylesheet' type="text/css" href='/stylesheets/style.css'/>
+  <link rel='stylesheet' type="text/css" href='/stylesheets/nav_bar.css'/>
+  </head>
+  <body>
+    <div class="container-fluid fluid_set" style="width: 100%;">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Om Construction</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/index">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/add">Add</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" action="/search" method="post">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" name ="input" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+
+      <!-- <div type="button" class="btn btn-light float-right btn btn-outline-success" style="text-align: right; margin-right : 20px;"><h5 style="color: black;"><a style="text-decoration: none; color : black;font-weight: 700;" href="/logout">SignOut</a></h5></div>
+      <div type="button" class="btn btn-light float-right btn btn-outline-success" style="text-align: right; margin-right : 20px;"><h5 style="color: black;"><a style="text-decoration: none; color : black;font-weight: 700;" href="/add">Add New</a></h5></div> -->
+    </div>
+    <div class="container-login100" style="background-image: url('/images/bg-01.jpg');">
+      
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 text-center mb-5">
+            <h2 class="heading-section">Agent Details</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="table-wrap">
+              <table class="table table-bordered table-dark table-hover">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Contact No.</th>
+                    <th>Edit/Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <%if(records != ''){%>
+                    <%records.forEach(function(row){%>
+                  <tr>
+                   
+                    <td><%= row.name%></td>
+                    <td><%= row.address%></td>
+                    <td><%= row.mobile%></td>
+                    <td><a class="btn btn-primary btn-xs" href="/edit/<%= row._id %>"><i class="fa fa-edit"></i></a>
+                      <a class="btn btn-danger btn-xs" href="/delete/<%= row._id %>"><i class="fa fa-trash"></i></a></td>
+                    <%})%>
+                  </tr>
+                  <%}%>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <script src="/javascripts/jquery.min.js"></script>
+  <script src="/javascripts/popper.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+  <script src="/javascripts/main.js"></script>
+</div>
+  </body>
+</html>
